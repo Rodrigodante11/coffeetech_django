@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'autenticacao.apps.AutenticacaoConfig',
     'coffeetech.apps.CoffeetechConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

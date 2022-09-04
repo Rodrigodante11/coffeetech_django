@@ -2,7 +2,7 @@
 
     <div class="container-fluid px-0">
 
-        <a class="navbar-brand" href="{% url 'home' %}">Coffeetech</a>
+        <a class="navbar-brand text-dark" href="{% url 'home' %}">Coffeetech</a>
 
         <button class="navbar-toggler"
                 type="button"
@@ -19,15 +19,15 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link text-dark" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nome</a>
+                    <a class="nav-link text-dark" href="#">Dashboard</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link text-dark" href="#">Historico</a>
                 </li>
 
             </ul>
@@ -52,7 +52,7 @@
                 <li class="nav-item">
 
                     <i class="fa-regular fa-circle-user fa-xl ms-5 " style="color: blue"></i>
-                    <a class="nav-link" href="{% url 'login' %}">User: Rodrigo </a>
+                    <a class="nav-link" href="{% url 'login' %}">User: {{ user.username|title  }} </a>
 
                 </li>
              </ul>
