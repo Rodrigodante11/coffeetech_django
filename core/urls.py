@@ -6,4 +6,5 @@ urlpatterns = [
     path('', include("coffeetech.urls")),
     path('login/', include("autenticacao.urls")),
     path('criar_contas/', include('contas.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
