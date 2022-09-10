@@ -1,4 +1,4 @@
-{% extends 'autenticacao/base.html' %}
+{% extends 'fragments/base.html' %}
 
 {% block title %} Login com redes sociais {% endblock %}
 
@@ -30,5 +30,5 @@
     </div>
   </div>
 </div>
-
+<div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
 {% endblock %}

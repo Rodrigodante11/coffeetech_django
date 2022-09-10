@@ -1,0 +1,23 @@
+.btn btn-primary btn-lg left-customized{
+    margin-left: -4800px;
+
+}
+.img-fluid
+{
+    max-height: 150px;
+    max-width: 150px;
+}
+.input-group{
+    width: 420px;
+}
+
+#id_username{
+    margin-left: 15px;
+
+}
+.nav-item{
+    margin-left: 25px;
+}
+#userLogo{
+    margin-top: 25px;
+}
