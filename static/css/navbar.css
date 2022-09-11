@@ -21,3 +21,15 @@
 #userLogo{
     margin-top: 25px;
 }
+.linhaComTexto {
+  width: 100%;
+  height: 22px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.linhaComTexto > span {
+  font-size: 23px;
+  background-color: #F3F5F6;
+  padding: 0 10px;
+}

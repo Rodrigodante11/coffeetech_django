@@ -72,33 +72,42 @@
                                     </button>
                                 </div>
 
-                                <div class="d-grid mt-2">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fa-brands fa-facebook"></i>
-                                        Entrar com o Facebook
-                                    </button>
-                                </div>
-
-                                <div class="d-grid mt-2">
-                                    <a href="{% provider_login_url 'google' %}" class="btn btn-danger" type="button">
-                                        <i class="fa-brands fa-google"></i>
-                                        Entrar com o Google
-                                    </a>
-                                </div>
-
-                                <div class="d-grid mt-2">
-                                    <a  href="#" class="btn btn-secondary" type="button">
-                                        <i class="fa-brands fa-github"></i>
-                                        Entrar com o GitGub
-                                    </a>
-                                </div>
-
                                 <div class="fw-bold my-2 text-center">
                                     <a href="{% url 'criar_conta' %}" class="btn text-secondary fw-bold">
                                         Criar conta
                                     </a>
                                 </div>
 
+                                <div class="linhaComTexto">
+                                  <span>or</span>
+                                </div>
+
+                                <div class="row  mt-4">
+
+                                    <div class="col-3">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa-brands fa-facebook fa-2x"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <a  href="#" class="btn btn-secondary" type="button">
+                                            <i class="fa-brands fa-github fa-2x"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <a href="{% provider_login_url 'google' %}" class="btn btn-danger" type="button">
+                                            <i class="fa-brands fa-google fa-2x"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <a href="{% provider_login_url 'google' %}" class="btn btn-primary" type="button">
+                                            <i class="fa-brands fa-twitter fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </form>
                         </div>
 
@@ -106,7 +115,7 @@
 
                             <div class="card my-5">
                                 <div class="card-header p-5">
-                                    <h3 class="text-success">  você já logado no sistema. </h3>
+                                    <h3 class="text-success">  você já esta logado no sistema. </h3>
                                     <p class="h5 text-center text-primary">Deseja realmente sair?</p>
                                 </div>
 
