@@ -91,7 +91,7 @@
                                     </div>
 
                                     <div class="col-3">
-                                        <a  href="#" class="btn btn-secondary" type="button">
+                                        <a  href="{% provider_login_url 'github' %}" class="btn btn-secondary" type="button">
                                             <i class="fa-brands fa-github fa-2x"></i>
                                         </a>
                                     </div>
@@ -149,7 +149,9 @@
         </div>
     </div>
 </main>
-
-<div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
-
+{% if not user.is_authenticated %}
+    <div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
+{% else %}
+     <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>
+{% endif %}
 {% endblock %}
