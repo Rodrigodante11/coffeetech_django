@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'autenticacao.apps.AutenticacaoConfig',
     'coffeetech.apps.CoffeetechConfig',
+    'dashboard.apps.DashboardConfig',
     'widget_tweaks',
     # Requerido allauth
     'allauth',

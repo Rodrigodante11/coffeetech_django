@@ -5,6 +5,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("coffeetech.urls")),
     path('login/', include("autenticacao.urls")),
+    path('dashboard/', include("dashboard.urls")),
     path('criar_contas/', include('contas.urls')),
     path('accounts/', include('allauth.urls')),
 ]
