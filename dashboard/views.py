@@ -91,10 +91,11 @@ class Fuzzy:
             dashboardModel.usuario = user
             dashboardModel.pk = 1
             dashboardModel.save()
+            print('-------------Novos dados Setados--------------')
             print('Esta ligado!!')
 
-        print('-------------Novos dados Setados--------------')
         if not self.power:
+            print('-------------Novos dados Setados--------------')
             print('Esta Desligado!!')
         print("Tempo escolhido: " + self.timer)
         print("Temperatura setada: " + self.temp)
@@ -129,9 +130,11 @@ def dashboard(request):
     if request.user.is_authenticated:
         global userLog
         userLog = request.user.username
-
+        thread = Singleton.instance()
         context = {
             'status': Dashboard.objects.get(id=1),
         }
-        return render(request, 'coffeetech/dashboard.html',context)
+
+        return render(request, 'coffeetech/dashboard.html', context)
     return render(request, 'coffeetech/dashboard.html')
+

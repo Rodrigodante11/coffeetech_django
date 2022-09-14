@@ -1,7 +1,11 @@
 {% extends 'fragments/base.html' %}
 {% block title %} Dashboard {% endblock %}
 {% block content %}
-   <h1> Dashbaorddd Status: {{ status }}</h1>
+   <div class="text-center" id="timer" style="background-color: blue; font-size: 50px " >Timer : {{ status.tempo }} </div>
+   <h1> Esta Ligado: {{ status.power }}</h1>
+   <h1> Temperatura: {{ status.temperatura }}</h1>
+   <h1> Umidade: {{ status.umidade }}</h1>
+
    <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>
 {% endblock %}
 
