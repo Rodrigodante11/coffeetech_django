@@ -33,3 +33,14 @@
   background-color: #F3F5F6;
   padding: 0 10px;
 }
+#imagem {
+    width: 186px;
+    height: 118px;
+}
+
+#timer {
+    font-size: 43px;
+    position: absolute;
+    margin-top: -95px;
+    right: 47%;
+}

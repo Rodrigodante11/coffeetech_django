@@ -1,10 +1,29 @@
 {% extends 'fragments/base.html' %}
 {% block title %} Dashboard {% endblock %}
 {% block content %}
-   <div class="text-center" id="timer" style="background-color: blue; font-size: 50px " >Timer : {{ status.tempo }} </div>
-   <h1> Esta Ligado: {{ status.power }}</h1>
-   <h1> Temperatura: {{ status.temperatura }}</h1>
-   <h1> Umidade: {{ status.umidade }}</h1>
+{% load static %}
+
+   {% if user.is_authenticated %}
+      <div class="row justify-content-center">
+         <img class="align-items-center" id="imagem" src="{% static 'images/relogio_digital.jpg' %}">
+      </div>
+
+      <div id="timer">
+         {{ status.tempo }}
+      </div>
+
+      <div class="text-center mt-5">
+         {% if status.power  == 1 %}
+            <h1> Status: <span style="color: green">Ligado</span> </h1>
+            <h1> Temperatura: {{ status.temperatura }}</h1>
+            <h1> Umidade: {{ status.umidade }}</h1>
+         {% else %}}
+
+            <h1> Status: <span style="color: green">Desligado</span> </h1>
+
+         {% endif %}
+      </div>
+   {% endif %}
 
    <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>
 {% endblock %}

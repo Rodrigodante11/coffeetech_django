@@ -17,7 +17,7 @@ function startTimer(duration, display){
 }
 
 window.onload = function () {
-    var duration =60 *4 ; //conversao para segundos
+    var duration =parseInt(document.querySelector('#timer').innerHTML) *60 ; //conversao para segundos
     var display= document.querySelector("#timer"); // Elemento para exibir o timer
 
     startTimer(duration, display); //inicia a funcao
