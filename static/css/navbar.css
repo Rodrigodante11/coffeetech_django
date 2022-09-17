@@ -44,3 +44,14 @@
     margin-top: -95px;
     right: 47%;
 }
+#fa-solid{
+    top: 20px;
+    background-color: black;
+}
+#visibilityBtn{
+    position: absolute;
+    right: 0px;
+    margin-top: -30px;
+    margin-right: 17px;
+    color: gray;
+}

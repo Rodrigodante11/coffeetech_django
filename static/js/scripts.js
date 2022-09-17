@@ -17,9 +17,23 @@ function startTimer(duration, display){
 }
 
 window.onload = function () {
-    var duration =parseInt(document.querySelector('#timer').innerHTML) *60 ; //conversao para segundos
-    var display= document.querySelector("#timer"); // Elemento para exibir o timer
+    var password =document.getElementById('visibilityBtn')
+    password.addEventListener("click", toggleVisibility)
 
-    startTimer(duration, display); //inicia a funcao
+    function toggleVisibility() {
+        const passwordInput = document.getElementById("idSenhaLogin")
+
+        if(passwordInput.type ==="password"){
+            password.className = "fa-solid fa-eye fa-xl text-sm-left"
+            passwordInput.type ="text"
+        }else {
+            password.className = "fa-solid fa-eye-slash fa-xl text-right"
+            passwordInput.type ="password"
+        }
+    }
+    // var duration =parseInt(document.querySelector('#timer').innerHTML) *60 ; //conversao para segundos
+    // var display= document.querySelector("#timer"); // Elemento para exibir o timer
+    //
+    // startTimer(duration, display); //inicia a funcao
 
 }
