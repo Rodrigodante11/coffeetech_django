@@ -1,5 +1,5 @@
 function startTimer(duration, display){
-    var timer = duration, minutes, seconds;
+    let timer = duration, minutes, seconds;
 
     setInterval(function (){
         minutes = parseInt(timer/60 , 10);
@@ -16,24 +16,42 @@ function startTimer(duration, display){
     },1000);
 }
 
-window.onload = function () {
-    var password =document.getElementById('visibilityBtn')
-    password.addEventListener("click", toggleVisibility)
+function renderiza_dados(url){
+    fetch(url, {
+        method: 'get',
+    }).then(function(result){
+        return result.json();
+    }).then(function(data){
 
-    function toggleVisibility() {
-        const passwordInput = document.getElementById("idSenhaLogin")
-
-        if(passwordInput.type ==="password"){
-            password.className = "fa-solid fa-eye fa-xl text-sm-left"
-            passwordInput.type ="text"
-        }else {
-            password.className = "fa-solid fa-eye-slash fa-xl text-right"
-            passwordInput.type ="password"
-        }
-    }
-    // var duration =parseInt(document.querySelector('#timer').innerHTML) *60 ; //conversao para segundos
-    // var display= document.querySelector("#timer"); // Elemento para exibir o timer
-    //
-    // startTimer(duration, display); //inicia a funcao
+        document.getElementById('temperatura_atual').innerHTML = data.temperatura;
+        document.getElementById('umidade_atual').innerHTML = data.umidade;
+        document.getElementById('power_atual').innerHTML = data.power;
+    });
 
 }
+window.onload = function () {
+    if (null != document.querySelector('#idSenhaLogin')) {
+        var password =document.getElementById('visibilityBtn');
+        password.addEventListener("click", toggleVisibility);
+
+        function toggleVisibility() {
+            const passwordInput = document.getElementById("idSenhaLogin");
+
+            if(passwordInput.type ==="password"){
+                password.className = "fa-solid fa-eye fa-xl text-sm-left";
+                passwordInput.type ="text";
+            }else {
+                password.className = "fa-solid fa-eye-slash fa-xl text-right";
+                passwordInput.type ="password";
+            }
+        }
+    }
+
+    if (null != document.querySelector('#timer')) {
+        var duration = parseInt(document.querySelector('#timer').innerHTML) * 60; //conversao para segundos
+        var display = document.querySelector("#timer"); // Elemento para exibir o timer
+
+        startTimer(duration, display); //inicia a funcao
+    }
+
+};

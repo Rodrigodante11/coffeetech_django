@@ -55,3 +55,30 @@
     margin-right: 17px;
     color: gray;
 }
+#dashboard {
+    color: black;
+}
+.informacoes_basicas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    height: 100px;
+    margin-right: auto;
+    border: 1px solid transparent;
+
+    border-image: linear-gradient(to right top, #bd31c4, #8e3bb0, #643b97, #413579, #282c59);
+
+    border-image-slice: 1;
+    margin-left: 1%;
+
+
+
+}
+
+.icone{
+    color: #C040B9;
+    width: 40px;
+
+
+}

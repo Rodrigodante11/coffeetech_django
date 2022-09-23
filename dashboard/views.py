@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http.response import JsonResponse,HttpResponse
 import random
 from paho.mqtt import client as mqtt_client
 import threading
@@ -137,4 +137,13 @@ def dashboard(request):
 
         return render(request, 'coffeetech/dashboard.html', context)
     return render(request, 'coffeetech/dashboard.html')
+
+def retorna_dados_dashboard(request):
+
+    if request.method == "GET":
+
+        dados_dashboard1 = Dashboard.objects.all().values()[0]
+        # print(dados_dashboard1)
+        return JsonResponse(dados_dashboard1)
+        # return JsonResponse({'foo':'bar'})
 
