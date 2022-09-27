@@ -29,48 +29,50 @@
                <h1><i class="fa-solid fa-power-off fa-2xl"></i> Power:
                </svg>  <span id="power_atual"></span></h1>
            </div>
-             <button id="testegg"> Teste</button>
-
          </div>
          <div class="row">
 
             <div class="col-md"><br>
                <h1>Temperatura X Tempo:</h1>
-               <canvas id="faturamento_mensal" width="250" height="200"></canvas>
+               <canvas id="temperatura_atual_canvas" width="250" height="200"></canvas>
             </div>
 
             <div class="col-md">
                <br>
                <h1> Umidade X Tempo:</h1>
-               <canvas id="despesas_mensal" width="250" height="200"></canvas>
+               <canvas id="umidade_atual_canvas" width="250" height="200"></canvas>
             </div>
          </div>
-         <div class="row">
-           <div class="col-md">
-               <br>
-               <h1>Temperatura X Umidade:</h1>
-               <canvas id="produtos_mais_vendidos" width="250" height="200"></canvas>
-           </div>
+<!--         <div class="row">-->
+<!--           <div class="col-md">-->
+<!--               <br>-->
+<!--               <h1>Temperatura X Umidade:</h1>-->
+<!--               <canvas id="temperatura_umidade_atual_canvas" width="200" height="200"></canvas>-->
+<!--           </div>-->
 
-         </div>
+<!--         </div>-->
       {% endif %}
    </div>
 
     <script>
 
-       function DezSegundos(){
+       function segundoaSegundo(){
              renderiza_dados('{% url "retorna_dados_dashboard" %}')
-       }
-       setInterval(DezSegundos, 1000);
 
-       var teste =document.getElementById('testegg');
-       teste.addEventListener("click", abc);
-       function abc() {
-           renderiza_dados('{% url "retorna_dados_dashboard" %}')
        }
+
+       function cincosegundos(){
+           renderiza_temperatura()
+           renderiza_umidade()
+       }
+       renderiza_temperatura()
+       renderiza_umidade()
+       setInterval(segundoaSegundo, 1000);
+       setInterval(cincosegundos, 5000);
 
     </script>
-<!--   <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>-->
+
+   <div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
 {% endblock %}
 
 
