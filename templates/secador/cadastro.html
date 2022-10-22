@@ -1,0 +1,87 @@
+{% extends 'fragments/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+       <div class="container">
+            <main>
+                <div class=" text-center py-4">
+                    <h2> Formulário de Cadastro </h2>
+                    <p class="lead">Informe os Dados do Secador Para cadastro</p>
+                </div>
+
+                <!--region Conteúdo principal -->
+                <div class="row g-5 justify-content-center">
+                    <div class="col-xl-6 col-md-6">
+
+                        <form action="{% url 'cadastro' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                  <div class="col-sm-6 mt-2">
+                                    <label for="nome_secador">Nome Secador</label>
+                                    <input type="text" class="form-control"  placeholder="Colocar Nome" name="nome">
+                                  </div>
+
+                                  <div class="col-sm-6 mt-2">
+                                    <label for="modelo_secador">Modelo Secadore</label>
+                                    <input type="text" class="form-control"  placeholder="Colocar Modelo" name="modelo">
+                                  </div>
+
+                                <div class="form-group mt-4">
+                                    <label for="localizacao">Selecione a localização</label>
+                                    <select class="form-control" name="localizacao">
+                                        <option>Minas Gerais</option>
+                                        <option>Acre</option>
+                                        <option>Alagoas</option>
+                                        <option>Amapá</option>
+                                        <option>Amazonas</option>
+                                        <option>Bahia</option>
+                                        <option>Ceará</option>
+                                        <option>Distrito Federal</option>
+                                        <option>Espírito Santo</option>
+                                        <option>Goiás</option>
+                                        <option>Maranhão</option>
+                                        <option>Mato Grosso</option>
+                                        <option>Mato Grosso do Sul</option>
+                                        <option>Pará</option>
+                                        <option>Paraíba</option>
+                                        <option>Paraná</option>
+                                        <option>Pernambuco</option>
+                                        <option>Piauí</option>
+                                        <option>Rio de Janeiro</option>
+                                        <option>Rio Grande do Norte</option>
+                                        <option>Rio Grande do Sul</option>
+                                        <option>Rondônia</option>
+                                        <option>Roraima</option>
+                                        <option>Santa Catarina</option>
+                                        <option>São Paulo</option>
+                                        <option>Sergipe</option>
+                                        <option>Tocantins</option>
+                                    </select>
+
+                                <div id="botao_submit" hx-swap-oob="true" class="mt-4">
+                                    <button class="w-100 btn btn-primary btn-lg" type="submit"> Cadstrar Secador</button>
+                                </div>
+                            </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <!--endregion-->
+            </main>
+        </div>
+
+   <div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
+
+    {% else %}
+        <div class="row justify-content-center mt-5">
+            <h5 class="row justify-content-center">Desculpe,
+                <span class="text-danger row justify-content-center">
+                    Voce não Tem Acesso ao cadastrados de Secadores Ainda,
+                </span>
+                Por favor clique em Cadastrar Usuario ou Fazer login no Sistema Primeiro</h5>
+        </div>
+        <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>
+    {% endif %}
+{% endblock %}

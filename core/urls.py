@@ -8,4 +8,5 @@ urlpatterns = [
     path('dashboard/', include("dashboard.urls")),
     path('criar_contas/', include('contas.urls')),
     path('accounts/', include('allauth.urls')),
+    path('secador/', include('secador.urls')),
 ]

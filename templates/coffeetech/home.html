@@ -1,8 +1,84 @@
 {% extends 'fragments/base.html' %}
+{% load static %}
 {% block title %} Home {% endblock %}
 {% block content %}
-   <h1> Home</h1>
-   <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>
+
+   {% if user.is_authenticated %}
+       <div class="contact-area section-padding-0-80">
+           <div class="container">
+               <div class="row justify-content-center">
+                   <div class="row">
+                       <div class="col-12">
+                           <div class="section-heading mt-4">
+                               <h3 class="text-center">Olá {{ user.username| title }} , esse são seus Secadores Registrados: </h3>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <!-- ##### Best Receipe Area Start ##### -->
+        <section class="best-receipe-area">
+            <div class="container">
+                <div class="row">
+
+                    {% if secadores %}
+                        {% for secador in secadores %}
+
+                            <!-- Single Best Receipe Area -->
+                            <div  class="col-12 col-sm-6 col-lg-2 mt-4">
+                                <a href="{% url 'dashboard' %}" style="text-decoration:none;">
+                                    <div class="single-best-receipe-area mb-30 card " style="border-radius: 25px; background-color: saddlebrown;
+                                    width: 190px; height: 170px">
+
+                                        <div class="receipe-content text-center text-white">
+                                            <h4>{{ secador.nome|title }}</h4>
+                                            <img src="{% static 'images/fogo.png' %}"  alt="fogo" style="width: 100px; height: 100px">
+                                            <h6>{{ secador.localizacao }}</h6>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="btn-group mt-2 ms-5" role="group" >
+                                    <a href="{% url 'detail' secador.id %}">
+                                        <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                                    </a>
+                                    <a href="{% url 'excluir' secador.id %}">
+                                        <i class="fa-sharp fa-solid fa-trash ms-5 fa-xl"></i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        {% endfor %}
+
+                    {% else %}
+                    <div class="row justify-content-center mt-5">
+                        <h5 class="row justify-content-center">Desculpe, Você Ainda
+                            <span class="text-danger row justify-content-center">
+                                não possui nenhuma Secadora cadastrada,
+                            </span>
+                            Por favor clique em Cadastrar Secador</h5>
+                    </div>
+
+                    {% endif %}
+                </div>
+            </div>
+            </br>
+
+        </section>
+        <div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
+
+    {% else %}
+        <div class="row justify-content-center mt-5">
+            <h5 class="row justify-content-center">Desculpe,
+                <span class="text-danger row justify-content-center">
+                    Voce não Tem Acesso aos Secadores cadastrados Ainda,
+                </span>
+                Por favor clique em Cadastrar Usuario ou Fazer login no Sistema Primeiro</h5>
+        </div>
+        <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>
+    {% endif %}
 {% endblock %}
 
 

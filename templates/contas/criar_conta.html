@@ -8,7 +8,7 @@
         <main>
             <div class=" text-center py-4">
                 <h2> Formulário de Cadastro </h2>
-                <p class="lead">Não se preocupe, nunca te enviaremos spams!!!</p>
+                <p class="lead">Nos informe seus Dados Para cadastro</p>
             </div>
 
             <!--region Conteúdo principal -->
@@ -28,7 +28,7 @@
                                 </div>
 
                                 <label for="{{ form.first_name.id_for_label }}"
-                                       class="form-label">{{ form.first_name.label }}</label>
+                                       class="form-label">Nome</label>
 
                                 {{ form.first_name }}
                             </div>
@@ -41,14 +41,14 @@
                                     {{ form.last_name.errors }}
                                 </div>
 
-                                <label for="{{ form.last_name.id_for_label }}" class="form-label">{{ form.last_name.label }}</label>
+                                <label for="{{ form.last_name.id_for_label }}" class="form-label">Sobrenome</label>
                                 {{ form.last_name }}
                             </div>
                             <!--endregion-->
 
                             <!--region Username-->
                             <div class="col-12">
-                                <label for="{{ form.username.id_for_label }}" class="form-label">{{ form.username.label }}</label>
+                                <label for="{{ form.username.id_for_label }}" class="form-label">nome de Uusario</label>
                                 <div class="input-group">
                                     <span class="input-group-text">@</span>
                                     {% render_field form.username hx-post="criar_conta/htmx_valida_username" hx-target="#usr-val" hx-trigger="keyup" %}
@@ -61,7 +61,7 @@
 
                             <!--region Email-->
                             <div class="col-12">
-                                <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.email.label }}</span></label>
+                                <label for="{{ form.email.id_for_label }}" class="form-label">Endereço de email</span></label>
                                 {% render_field form.email hx-post="criar_conta/htmx_valida_email" hx-target="#usr_email" hx-trigger="keyup" %}
                             </div>
 
@@ -70,12 +70,12 @@
 
                             <!--region Password-->
                             <div class="col-sm-6">
-                                <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.password.label }}</label>
+                                <label for="{{ form.email.id_for_label }}" class="form-label">Senha</label>
                                 {% render_field form.password hx-post="criar_conta/htmx_valida_senha" hx-target="#error_pwd" hx-trigger="keyup" %}
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="pwd_confirm" class="form-label">Confirmação de senha</label>
+                                <label for="pwd_confirm" class="form-label">Confirmar senha</label>
                                 <input  type="password"
                                         class="form-control"
                                         id="pwd_confirm"

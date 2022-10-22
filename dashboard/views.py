@@ -138,6 +138,7 @@ def dashboard(request):
         return render(request, 'coffeetech/dashboard.html', context)
     return render(request, 'coffeetech/dashboard.html')
 
+
 def retorna_dados_dashboard(request):
 
     if request.method == "GET":

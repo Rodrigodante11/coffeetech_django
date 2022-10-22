@@ -1,0 +1,39 @@
+{% extends 'fragments/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <!-- Receipe Slider -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="receipe-slider owl-carousel">
+                         <img  src="{% static 'images/fogo.png' %}" alt="Fogo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Receipe Content Area -->
+        <div class="receipe-content-area">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 col-md-8 ">
+                        <div class="receipe-headline my-5">
+                            <h2>Nome: {{secador.nome}}</h2>
+                            <div class="receipe-duration">
+                                <h6>Adicionado Por :    {{secador.usuario|title}}</h6>
+                                <h6>Modelo:  {{secador.modelo}}</h6>
+                                <h6>Localizacao:  {{secador.localizacao}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+   <div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
+{% endblock %}

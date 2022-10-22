@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'autenticacao.apps.AutenticacaoConfig',
     'coffeetech.apps.CoffeetechConfig',
     'dashboard.apps.DashboardConfig',
+    'secador.apps.SecadorConfig',
     'widget_tweaks',
     # Requerido allauth
     'allauth',
