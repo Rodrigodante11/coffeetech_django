@@ -26,17 +26,20 @@
 
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a class="nav-link text-dark" href="{% url 'cadastro' %}">Cadastrar Secador</a>
+                                        <h5>
+                                            <a class="nav-link text-dark"  href="{% url 'home' %}">Home</a>
+                                        </h5>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link text-dark"  href="{% url 'dashboard' %}">Dashboard</a>
+                                        <h5>
+                                            <a class="nav-link text-dark" href="{% url 'cadastro' %}">Cadastrar Secador</a>
+                                        </h5>
                                     </li>
 
                                 </ul>
 
                                 <form class="d-flex " action="{% url 'buscar' %} " >
-                                    <div class="input-group">
                                         <input type="text"
                                                id="form1"
                                                class="form-control"
@@ -45,11 +48,10 @@
                                                size="30"
                                                name="buscar">
 
-
                                         <button type="submit" class="btn btn-primary btn-lg left-customized" style="margin-left: -48px">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </button>
-                                    </div>
+
                                 </form>
                             </div>
 

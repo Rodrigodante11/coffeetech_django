@@ -7,43 +7,50 @@
       <div class="row justify-content-center">
          <img class="align-items-center" id="imagem" src="{% static 'images/relogio_digital.jpg' %}">
       </div>
-
       <div id="timer">
          {{ status.tempo }}
+      </div>
+      <div class="d-flex justify-content-center mt-2">
+          <h4>
+              Nome Secador: <span class="text-success">{{ secador.nome | title}}</span> </br>
+              localizacao: <span class="text-success">{{ secador.localizacao | title}} </span>
+          </h4>
       </div>
 
       <div class="container" id="dashboard">
          <div class="row">
-            <div  class="col-md informacoes_basicas">
+            <div  class="col-md informacoes_basicas" >
 
-               <h1><i class="fa-solid fa-temperature-three-quarters fa-2xl"></i> Temperatura:
-               </svg> &nbsp <span id="temperatura_atual"></span></h1>
+               <h1><i class="fa-solid fa-temperature-three-quarters fa-xl"></i> Temp:
+               </svg> &nbsp <span id="temperatura_atual"></span>°C</h1>
+
            </div>
 
            <div class="col-md informacoes_basicas">
-               <h1><i class="fa-solid fa-droplet fa-2xl"></i> Umidade:
-               </svg> &nbsp  <span id="umidade_atual"></span></h1>
+               <h1><i class="fa-solid fa-droplet fa-xl"></i> Umid:
+               </svg> &nbsp  <span id="umidade_atual"></span>%</h1>
+
            </div>
 
            <div class="col-md informacoes_basicas">
-               <h1><i class="fa-solid fa-power-off fa-2xl"></i> Power:
+               <h1><i class="fa-solid fa-power-off fa-xl"></i> Power:
                </svg>  <span id="power_atual"></span></h1>
            </div>
          </div>
          <div class="row">
 
             <div class="col-md"><br>
-               <h1>Temperatura X Tempo:</h1>
+               <h1 class="d-flex justify-content-center mt-2">Temperatura X Tempo:</h1>
                <canvas id="temperatura_atual_canvas" width="250" height="200"></canvas>
             </div>
 
             <div class="col-md">
                <br>
-               <h1> Umidade X Tempo:</h1>
+               <h1 class="d-flex justify-content-center mt-2"> Umidade X Tempo:</h1>
                <canvas id="umidade_atual_canvas" width="250" height="200"></canvas>
             </div>
          </div>
-          <div class="footer-botom">{% include 'fragments/footer.html' with var_position='posisition-sticky' %}</div>
+          <div class="footer-botom">{% include 'fragments/footer.html' with var_position='fixed-bottom' %}</div>
 
       {% else %}
         <div class="row justify-content-center mt-5">

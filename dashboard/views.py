@@ -7,6 +7,8 @@ import threading
 from dashboard.models import Dashboard
 from django.contrib.auth.models import User
 
+from secador.models import Secador
+
 userLog = None
 
 
@@ -26,7 +28,7 @@ class Singleton:
         return cls._instance
 
 
-class Fuzzy:
+class Mqtt:
 
     def __init__(self):
         self.temp = '0'
@@ -117,22 +119,24 @@ class Thread(threading.Thread):
         print(f'Are they alive? {self.is_alive()}')
 
     def run(self):
-        fuzzy = Fuzzy()
-        client = fuzzy.connect_mqtt()
+        mqtt = Mqtt()
+        client = mqtt.connect_mqtt()
         client.loop_stop()
         client.loop_start()
-        fuzzy.publish(client)
+        mqtt.publish(client)
 
 
 # Create your views here.
-def dashboard(request):
+def dashboard(request, secador_id):
 
     if request.user.is_authenticated:
         global userLog
         userLog = request.user.username
-        thread = Singleton.instance()
+        Singleton.instance()
+        secador = Secador.objects.get(id=secador_id)
         context = {
             'status': Dashboard.objects.get(id=1),
+            'secador': secador,
         }
 
         return render(request, 'coffeetech/dashboard.html', context)
