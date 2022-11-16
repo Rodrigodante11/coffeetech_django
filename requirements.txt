@@ -21,3 +21,4 @@ sqlparse==0.4.2
 typing_extensions==4.3.0
 urllib3==1.26.12
 matplotlib==3.5.3
+paho-mqtt==1.6.1

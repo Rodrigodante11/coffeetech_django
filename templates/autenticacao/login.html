@@ -40,7 +40,7 @@
                                            id="idEmailLogin"
                                            name="username"
                                            value="{{username}}"
-                                           placeholder="name@example.com">
+                                           placeholder="name">
 
                                     <label for="idEmailLogin">Digite aqui seu Usuário ou Email</label>
                                 </div>
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div class="my-3 text-end">
-                                    <a class="btn" href="{% url 'password_reset' %}">
+                                    <a id="link-esqueceu-sua-senha" class="btn" href="{% url 'password_reset' %}">
                                         <span class="text-success fw-bold">
                                             Esqueceu sua senha?
                                         </span>
@@ -74,14 +74,14 @@
                                 </div>
 
                                 <div class="d-grid mt-2">
-                                    <button class="btn btn-success" type="submit">
+                                    <button id="btn-login" class="btn btn-success" type="submit">
                                         <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                         Login
                                     </button>
                                 </div>
 
                                 <div class="fw-bold my-2 text-center">
-                                    <a href="{% url 'criar_conta' %}" class="btn text-secondary fw-bold">
+                                    <a id="btn-criar-conta-tela-login" href="{% url 'criar_conta' %}" class="btn text-secondary fw-bold">
                                         Criar conta
                                     </a>
                                 </div>
@@ -129,7 +129,8 @@
 
                                 <div class="card-body d-flex justify-content-center">
 
-                                    <button type="button"
+                                    <button id="btn-sim-deslogar"
+                                            type="button"
                                             class="btn btn-danger me-2"
                                             hx-get="autenticacao/processa_logout/"
                                             hx-trigger="click"
@@ -137,7 +138,8 @@
                                         Sim
                                     </button>
 
-                                    <button type="button"
+                                    <button id="btn-nao-deslogar"
+                                            type="button"
                                             class="btn btn-primary"
                                             hx-get="autenticacao/processa_redirect_home/"
                                             hx-trigger="click"

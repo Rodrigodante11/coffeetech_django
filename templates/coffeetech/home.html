@@ -31,7 +31,7 @@
                                     <div class="single-best-receipe-area mb-30 card " style="border-radius: 25px; background-color: saddlebrown;
                                     width: 190px; height: 170px">
 
-                                        <div class="receipe-content text-center text-white">
+                                        <div id ="informacao-secador" class="receipe-content text-center text-white">
                                             <h4>{{ secador.nome|title }}</h4>
                                             <img src="{% static 'images/fogo.png' %}"  alt="fogo" style="width: 100px; height: 100px">
                                             <h6>{{ secador.localizacao }}</h6>
@@ -41,10 +41,10 @@
 
                                 <div class="btn-group mt-2 ms-5" role="group" >
                                     <a href="{% url 'detail' secador.id %}">
-                                        <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                                        <i id="btn-detail" class="fa-solid fa-pen-to-square fa-xl"></i>
                                     </a>
                                     <a href="{% url 'excluir' secador.id %}">
-                                        <i class="fa-sharp fa-solid fa-trash ms-5 fa-xl"></i>
+                                        <i id="btn-delete" class="fa-sharp fa-solid fa-trash ms-5 fa-xl"></i>
                                     </a>
 
                                 </div>

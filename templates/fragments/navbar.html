@@ -27,13 +27,13 @@
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
                                         <h5>
-                                            <a class="nav-link text-dark"  href="{% url 'home' %}">Home</a>
+                                            <a id="home-page-link" class="nav-link text-dark"  href="{% url 'home' %}">Home</a>
                                         </h5>
                                     </li>
 
                                     <li class="nav-item">
                                         <h5>
-                                            <a class="nav-link text-dark" href="{% url 'cadastro' %}">Cadastrar Secador</a>
+                                            <a id="cadastrar-secador-page-link" class="nav-link text-dark" href="{% url 'cadastro' %}">Cadastrar Secador</a>
                                         </h5>
                                     </li>
 
@@ -61,14 +61,14 @@
                                     <i class="fa-regular fa-circle-user fa-xl ms-5" style="color: black" id="userLogo"></i>
                                      <div id="id_username">
                                          {% if user.is_authenticated %}
-                                            <a class="nav-link text-dark" href="{% url 'login' %}">
+                                            <a id ="link-login-usuario-ja-logado" class="nav-link text-dark" href="{% url 'login' %}">
                                                 <span>Olá, {{ user.username| title  }}
                                                 <br>
                                                     <span>Bem Vindo :)</span>
                                                 </span>
                                             </a>
                                          {% else %}
-                                            <a class="nav-link text-dark"  href="{% url 'login' %}">
+                                            <a id="link-login" class="nav-link text-dark"  href="{% url 'login' %}">
                                                 <span>Olá, faça seu login
                                                 <br>
                                                     <span>ou cadastre-se</span>
